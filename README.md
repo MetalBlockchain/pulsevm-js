@@ -1,2 +1,3 @@
-# pulsevm-js
-TypeScript SDK for PulseVM
+# PulseVM-JS
+
+JavaScript, TypeScript SDK for PulseVM.

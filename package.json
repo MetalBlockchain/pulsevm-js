@@ -1,0 +1,51 @@
+{
+  "name": "@metalblockchain/pulsevm-js",
+  "version": "0.0.14",
+  "description": "TypeScript SDK for PulseVM",
+  "main": "dist/index.cjs",
+  "module": "dist/es/index.js",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint --fix --ignore-pattern .gitignore \"./**/*.ts*\"",
+    "build": "rollup -c"
+  },
+  "exports": {
+    "import": "./dist/es/index.js",
+    "require": "./dist/index.cjs",
+    "default": "./dist/es/index.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@noble/hashes": "^1.7.1",
+    "@noble/secp256k1": "^2.2.3",
+    "@scure/base": "^1.2.4",
+    "micro-eth-signer": "^0.14.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "eslint": "^9.21.0",
+    "globals": "^16.0.0",
+    "prettier": "3.5.3",
+    "rollup": "^4.34.9",
+    "rollup-plugin-filesize": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0",
+    "vitest": "^3.0.7"
+  }
+}
