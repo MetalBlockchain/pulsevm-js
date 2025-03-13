@@ -28,3 +28,7 @@ export function parsePrivateKey(key: string): Uint8Array<ArrayBufferLike> {
 export function generatePrivateKey(): Uint8Array<ArrayBufferLike> {
   return secp.utils.randomPrivateKey();
 }
+
+export function privateKeyToPublicKey(privKey: Uint8Array): Uint8Array {
+  return secp.getPublicKey(privKey, true);
+}

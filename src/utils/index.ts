@@ -1,3 +1,4 @@
+export * from './action';
 export * from './base58';
 export * from './buffer';
 export * from './crypto';

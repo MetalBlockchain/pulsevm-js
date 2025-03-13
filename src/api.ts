@@ -3,6 +3,7 @@ import { IssueTxRequest, IssueTxResponse } from './models';
 import { Transaction } from './tx/tx';
 import { JsonRpcProvider } from './utils/rpc';
 import { add0x } from 'micro-eth-signer/utils';
+import { addChecksum } from './utils';
 
 export class PulseAPI {
   protected rpcProvider: JsonRpcProvider;
@@ -23,7 +24,7 @@ export class PulseAPI {
 
   issueTx = async (tx: Transaction) => {
     const params: IssueTxRequest = {
-      tx: add0x(bytesToHex(tx.toBytes())),
+      tx: add0x(bytesToHex(addChecksum(tx.toBytes()))),
     };
     const resp = await this.callRpc<IssueTxResponse>('pulsevm.issueTx', {
       ...params,

@@ -11,7 +11,7 @@ const key = parsePrivateKey(
 
 const tx = new Transaction(
     // Unsigned transaction
-    new UnsignedTransaction(
+    new BaseTransaction(
         // Blockchain ID, used to prevent replay attacks on other chains
         // Should be the ID of the chain this VM is running in
         Id.fromString('28fJD1hMz2PSRJKJt7YT41urTPR37rUNUcdeJ8daoiwP6DGnAR'),

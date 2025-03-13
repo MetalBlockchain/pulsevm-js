@@ -1,5 +1,6 @@
-import { bytesToHex, hexToBytes } from '@noble/hashes/utils';
+import { bytesToHex, concatBytes, hexToBytes } from '@noble/hashes/utils';
 import { add0x, strip0x } from 'micro-eth-signer/utils';
+import { sha256 } from '@noble/hashes/sha256';
 
 export function padLeft(bytes: Uint8Array, length: number) {
   const offset = length - bytes.length;
@@ -30,4 +31,8 @@ export function bufferToBigInt(buf: Uint8Array) {
 
 export function bufferToHex(buf: Uint8Array) {
   return add0x(bytesToHex(buf));
+}
+
+export function addChecksum(data: Uint8Array) {
+  return concatBytes(data, sha256(data).subarray(-4));
 }

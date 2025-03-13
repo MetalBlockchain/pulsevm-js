@@ -1,6 +1,6 @@
 import { concatBytes } from '@noble/hashes/utils';
 import { Serializable } from '../serializable/common';
-import { Int } from '../serializable/primitives/int';
+import { Int } from '../serializable/primitives';
 
 export function pack(serializables: (Serializable | Serializable[])[]) {
   return concatBytes(
