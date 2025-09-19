@@ -1,6 +1,9 @@
+
 import terser from '@rollup/plugin-terser';
 import filesize from 'rollup-plugin-filesize';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import typescript from '@rollup/plugin-typescript';
 
 export default {
@@ -19,5 +22,11 @@ export default {
       sourcemap: process.env.BUILD === 'production' ? false : true,
     },
   ],
-  plugins: [filesize(), nodeResolve(), typescript()],
+  plugins: [
+    filesize(),
+    nodeResolve({ preferBuiltins: true, browser: true }),
+    commonjs(),
+    json(),
+    typescript(),
+  ],
 };

@@ -1,6 +1,6 @@
 {
   "name": "@metalblockchain/pulsevm-js",
-  "version": "0.0.17",
+  "version": "0.0.49",
   "description": "TypeScript SDK for PulseVM",
   "main": "dist/index.cjs",
   "module": "dist/es/index.js",
@@ -28,13 +28,19 @@
     "@noble/hashes": "^1.7.1",
     "@noble/secp256k1": "^2.2.3",
     "@scure/base": "^1.2.4",
-    "micro-eth-signer": "^0.14.0"
+    "brorand": "^1.1.0",
+    "elliptic": "^6.6.1",
+    "hash.js": "^1.1.7",
+    "micro-eth-signer": "^0.14.0",
+    "pako": "^2.1.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
@@ -46,6 +52,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.0",
-    "vitest": "^3.0.7"
+    "vitest": "^3.2.4"
   }
 }
